@@ -1,0 +1,42 @@
+
+const __sfc__ = defineComponent({
+  data() {
+    return {
+      scanResult: "",  // To store the scanned result
+    };
+  },
+  onLoad() {
+    this.startScanning();
+  },
+  methods: {
+	  goBack() {
+	    uni.navigateBack(); // Go back to the previous page
+	  },
+    startScanning() {
+		// uni.scanCode({
+		// 	scanType: ['qrCode']
+		// });
+	},
+  },
+});
+
+export default __sfc__
+function GenPagesHomeScanRender(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+  return createElementVNode("view", utsMapOf({ class: "custom-nav" }), [
+    createElementVNode("image", utsMapOf({
+      onClick: _ctx.goBack,
+      class: "img",
+      src: "/static/back.png"
+    }), null, 8 /* PROPS */, ["onClick"]),
+    createElementVNode("text", utsMapOf({ class: "nav-title" }), "扫一扫"),
+    createElementVNode("image", utsMapOf({
+      class: "img",
+      src: "/static/setting.png"
+    }))
+  ])
+}
+const GenPagesHomeScanStyles = [utsMapOf([["custom-nav", padStyleMapOf(utsMapOf([["backgroundImage", "linear-gradient(to right, #ff7f50, #ff4500)"], ["paddingTop", 40], ["paddingBottom", 10], ["paddingLeft", 20], ["paddingRight", 20], ["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"]]))], ["nav-title", padStyleMapOf(utsMapOf([["color", "#FFFFFF"], ["fontWeight", "bold"]]))], ["img", padStyleMapOf(utsMapOf([["width", 16], ["height", 16]]))]])]
+
+//# sourceMappingURL=scan.uvue.map

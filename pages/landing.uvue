@@ -1,0 +1,49 @@
+<template>
+  <view class="landing">
+    <image class="logo" :src="logoUrl" mode="aspectFit"></image>
+    <text class="welcome-text">Welcome to Your App</text>
+    <button @click="navigateToMain">Get Started</button>
+  </view>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      logoUrl: 'path/to/your/logo.png', // Replace with your logo path
+    };
+  },
+  methods: {
+	navigateToMain() {
+		uni.redirectTo({
+			url: '/pages/home/index', // Change to your homepage path
+		});
+	},
+  },
+};
+</script>
+
+<style scoped>
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.logo {
+  width: 200px;
+  height: auto;
+}
+.welcome-text {
+  font-size: 24px;
+  margin: 20px 0;
+}
+button {
+  padding: 10px 20px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+</style>

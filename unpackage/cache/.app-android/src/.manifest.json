@@ -1,0 +1,36 @@
+{
+  "version": "1",
+  "env": {
+    "compiler_version": "4.29"
+  },
+  "files": {
+    "index.kt": {
+      "md5": "99446f63aaeda8a5bca42c3d338c2039cde89b5d",
+      "class": ""
+    },
+    "uniCloud/cloudfunctions/GenCloudObjFacialRecognitionCo.kt": {
+      "class": "GenCloudObjFacialRecognitionCo",
+      "md5": "b6636a368e9168308a9cf1eab2573df6fd398309"
+    },
+    "uniCloud/cloudfunctions/GenCloudObjTodo.kt": {
+      "class": "GenCloudObjTodo",
+      "md5": "ea17733dc7ca67b697be664b99c92c638b6c91e3"
+    },
+    "uniCloud/cloudfunctions/GenCloudObjUniPayCo.kt": {
+      "class": "GenCloudObjUniPayCo",
+      "md5": "ed8cc07317828308f89a4cdb58aee6591cc0dd26"
+    },
+    "pages/home/index.kt": {
+      "md5": "4c5dee237834540a986bd1b18cb49583b55a83c9",
+      "class": "GenPagesHomeIndex"
+    },
+    "pages/home/scan.kt": {
+      "md5": "bc8d5e20419b4af44500ff99d91015dd5d46f1e4",
+      "class": "GenPagesHomeScan"
+    },
+    "uni_modules/uni-icons/components/uni-icons/uni-icons.kt": {
+      "md5": "b2a19e32799b479a04d951211a604d373ebc64e9",
+      "class": "GenUniModulesUniIconsComponentsUniIconsUniIcons"
+    }
+  }
+}

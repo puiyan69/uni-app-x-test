@@ -1,0 +1,262 @@
+<template>
+	<view class="custom-nav">
+		<image class='img'  src="../../static/back.png"></image>
+		<text class="nav-title">钱包</text>
+		<image class='img'  src="../../static/setting.png"></image>
+	</view>
+	
+	<scroll-view style="flex:1; position: relative;">
+		<view class="user-level-view">
+			<image class="user-level-icon" src="../../static/circle.png"></image>
+			<text class="user-level-text">尊享用户</text>
+		</view>
+		<view class="contact-us-view">
+			<image class="img" src="../../static/customer-service.png"></image>
+			<text class="contact-us-text">联系我们</text>
+		</view>
+	
+		<view class="content-container">
+			<view class="qr-function" style="margin: 10px 30px 20px 0px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around  /* Space between items */">
+				<view @click="navigateToScanPage" style="display: flex; flex-direction: column; justify-content: center;">
+					<image style="width: 35px; height: 35px;" src="../../static/qr-scan.png"></image>
+					<text style="font-size: 12px;padding-top: 5px; font-weight: 400;">扫一扫</text>
+				</view>
+				<view style="display: flex; flex-direction: column; justify-content: center;">
+					<image style="width: 35px; height: 35px;" src="../../static/qr-scan.png"></image>
+					<text style="font-size: 12px;padding-top: 5px; font-weight: 400;">收款码</text>
+				</view>
+			</view>
+		
+			<view class="balance-info-container">
+				<view class="acc-num-sec">
+						<view class="acc-display">
+							<image class="logo-img" style="" src="/static/elephant.png"></image>
+							<text class="acc-num" style="">账号 : {{userInformation.account_number}}</text>
+							<image class="copy-img" style=""src="/static/copy.png"></image>
+						</view>
+						<view>
+							<image class="history-img" style="" src="/static/notes.png"></image>
+						</view>
+				</view>
+				<view v-for="item in userInformation.user_balance">
+					<view style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; margin-top: 20px;">
+						<view class="amount_sec">
+							<image class="flag_img" :src="item.flag"></image>
+							<text class="balance_text" >${{item.balance}} </text>
+							   <uni-icons style="margin-left : 10px" type="eye-filled" size="15" color="#ffffff"></uni-icons>
+						</view>
+						<view class="non-withdraw-sec">
+							<uni-icons class="non-withdraw-img" type="help-filled" color="#ffffff"></uni-icons>
+							<text class="non-withdraw-txt">不可提现余额: $0.00</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</template>
+
+<script>
+	
+type ItemCurrency = {
+	balance : Number, 
+	flag : String, 
+	non_withdraw_amount : Number
+}
+
+type UserInformation = {
+	membership_level : String, 
+	account_number : String, 
+	user_balance : ItemCurrency[]
+}
+
+export default {
+	data(){
+		return {
+			userInformation : {
+				membership_level : "Platinum",
+				account_number : "96375064", 
+				user_balance :  [
+					{
+						balance : 2.89, 
+						flag : "/static/united-states.png", 
+						non_withdraw_amount : 0.00
+					},
+					{
+						balance : 502, 
+						flag : "/static/khmer.png", 
+						non_withdraw_amount : 0.00
+					}
+				] as Array<ItemCurrency>
+			} as UserInformation
+		};
+	},
+	created(){
+
+	},
+	methods: {
+		goBack() {
+		  uni.navigateBack(); // Go back to the previous page
+		},
+		navigateToScanPage() {
+		      // Navigate to the scan page when the button is clicked
+			uni.navigateTo({
+				url: '/pages/home/scan',  // Path to the scan page
+			});
+		},
+	}
+}
+</script>
+
+<style lang="scss">
+	
+.custom-nav {
+  background: linear-gradient(to right, #ff7f50, #ff4500);;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-title {
+	color: white;
+	font-size: $uni-font-size-sm;
+	font-weight: bold;
+}
+
+.img {
+	width: 16px;
+	height: 16px;
+}
+
+.contact-us-view {
+	 position:fixed; 
+	 display: flex; 
+	 flex-direction: row; 
+	 align-items: center;
+	 right: 0px; 
+	 top: 9%;
+	 padding:5px;
+	 background-color: white; 
+	 border-top-left-radius: 15px; 
+	 border-bottom-left-radius: 15px;
+}
+
+.contact-us-text {
+	color : dodgerblue; 
+	font-size: 12px; 
+	padding-left: 5px;
+}
+
+.user-level-view {
+	 background: linear-gradient(to right, #ff7f50, #ff4500);
+	 padding-bottom: 25px; 
+	 padding-top: 15px;
+	 padding-left: 20px;
+	 display: flex;
+	 flex-direction: row;
+	 align-items: center;
+}
+
+.user-level-text {
+	font-size: 12px;
+	color: white;
+	padding-left: 5px;
+}
+
+.user-level-icon {
+	height:25px; 
+	width: 25px;
+}
+
+.content-container{
+	border-top-left-radius: 5px; 
+	border-top-right-radius: 5px; 
+	margin-top : -10px; 
+	background-color: white; padding: 20px;
+}
+
+.balance-info-container {
+	 background: linear-gradient(to right, #a20006,#d70000); 
+	 padding: 20px;
+	 border-radius: 10px;
+}
+
+.acc-num-sec {
+	flex-direction: row; 
+	display: flex; 
+	align-items: center; 
+	justify-content: space-between;
+}
+
+.acc-display {
+	display: flex; 
+	flex-direction: row; 
+	align-items: center;
+}
+
+.logo-img {
+	width: 30px; 
+	height: 30px; 
+	margin-right: 15px;
+}
+
+.acc-num {
+	color: white; 
+	font-size:13; 
+	font-weight: bold;
+}
+
+.copy-img {
+	width:12px; 
+	height: 11px;
+	margin-left: 10px ;
+}
+
+.history-img {
+	width: 18px; 
+	height: 18px;
+}
+
+
+.amount_sec {
+	display: flex;
+	flex-direction: row; 
+}
+
+.flag_img {
+	width: 35px; 
+	height: 33px;
+}
+
+.balance_text {
+	color: white; 
+	text-decoration-line : underline;
+	text-decoration-thickness: 5px;
+	text-decoration-color : white;
+	font-size: 14px; 
+	font-weight: bold; 
+	margin-left: 10px;
+}
+
+.non-withdraw-sec {
+	display: flex; 
+	flex-direction: row; 
+	align-items: flex-start;
+	align-items: center;
+}
+
+.non-withdraw-img {
+	margin-right: 5px;
+}
+
+.non-withdraw-txt {
+	color:white; 
+	font-size:12px; 
+	font-weight: 700;
+}
+
+</style>

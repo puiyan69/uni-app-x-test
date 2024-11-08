@@ -1,0 +1,47 @@
+{
+  "version": "1",
+  "env": {
+    "compilerVersion": "4.29"
+  },
+  "files": {
+    "plugin.uts": {
+      "md5": "2cedc1498a572240dc962fb2185c795f"
+    },
+    "utssdk/common/config.uts": {
+      "md5": "61bc97be610686a508084dc772f409c0"
+    },
+    "utssdk/common/core/report.uts": {
+      "md5": "95b7b2e62daa1e88b54b9234d6ed4bc9"
+    },
+    "utssdk/common/core/stat-type.uts": {
+      "md5": "db9ebc0cc0ff04518af1f2531f393fa3"
+    },
+    "utssdk/common/core/stat.uts": {
+      "md5": "b93ecb8b35c9c5d3b7a6fdf16c2a7dd3"
+    },
+    "utssdk/common/index.uts": {
+      "md5": "f60d8aaf78381c0a00a0ceb82cad3615"
+    },
+    "utssdk/common/utils/db.uts": {
+      "md5": "f003a05d08becf553705ecc2007d6023"
+    },
+    "utssdk/common/utils/index.uts": {
+      "md5": "a0a3f7400f6df74ec1723c3aa5fee9bf"
+    },
+    "utssdk/common/utils/pageInfo.uts": {
+      "md5": "ecc0c6a77c7a7e31b8dfd572aea1081b"
+    },
+    "utssdk/common/utils/pageTime.uts": {
+      "md5": "20d62a85e4869cb9ac8b1ed23970d619"
+    },
+    "utssdk/index.uts": {
+      "md5": "a4cd4b78a1e2fb299a942c853def7d8c"
+    },
+    "utssdk/interface.uts": {
+      "md5": "1c9718026601f93803d9e1e2b2a85e3a"
+    },
+    "package.json": {
+      "md5": "3a5fc37bea2a0c982d98ce270cf7b6a1"
+    }
+  }
+}

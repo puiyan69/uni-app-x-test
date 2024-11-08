@@ -1,0 +1,180 @@
+
+	
+type ItemCurrency = { __$originalPosition?: UTSSourceMapPosition<"ItemCurrency", "pages/home/index.uvue", 61, 6>;
+	balance : Number, 
+	flag : String, 
+	non_withdraw_amount : Number
+}
+
+type UserInformation = { __$originalPosition?: UTSSourceMapPosition<"UserInformation", "pages/home/index.uvue", 67, 6>;
+	membership_level : String, 
+	account_number : String, 
+	user_balance : ItemCurrency[]
+}
+
+const __sfc__ = defineComponent({
+	data(){
+		return {
+			userInformation : {
+				membership_level : "Platinum",
+				account_number : "96375064", 
+				user_balance :  [
+					{
+						balance : 2.89, 
+						flag : "/static/united-states.png", 
+						non_withdraw_amount : 0.00
+					},
+					{
+						balance : 502, 
+						flag : "/static/khmer.png", 
+						non_withdraw_amount : 0.00
+					}
+				] as Array<ItemCurrency>
+			} as UserInformation
+		};
+	},
+	created(){
+
+	},
+	methods: {
+		goBack() {
+		  uni.navigateBack(); // Go back to the previous page
+		},
+		navigateToScanPage() {
+		      // Navigate to the scan page when the button is clicked
+			uni.navigateTo({
+				url: '/pages/home/scan',  // Path to the scan page
+			});
+		},
+	}
+})
+
+export default __sfc__
+function GenPagesHomeIndexRender(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+const _component_uni_icons = resolveEasyComponent("uni-icons",_easycom_uni_icons)
+
+  return createElementVNode(Fragment, null, [
+    createElementVNode("view", utsMapOf({ class: "custom-nav" }), [
+      createElementVNode("image", utsMapOf({
+        class: "img",
+        src: "/static/back.png"
+      })),
+      createElementVNode("text", utsMapOf({ class: "nav-title" }), "钱包"),
+      createElementVNode("image", utsMapOf({
+        class: "img",
+        src: "/static/setting.png"
+      }))
+    ]),
+    createElementVNode("scroll-view", utsMapOf({
+      style: normalizeStyle(utsMapOf({"flex":"1","position":"relative"}))
+    }), [
+      createElementVNode("view", utsMapOf({ class: "user-level-view" }), [
+        createElementVNode("image", utsMapOf({
+          class: "user-level-icon",
+          src: "/static/circle.png"
+        })),
+        createElementVNode("text", utsMapOf({ class: "user-level-text" }), "尊享用户")
+      ]),
+      createElementVNode("view", utsMapOf({ class: "contact-us-view" }), [
+        createElementVNode("image", utsMapOf({
+          class: "img",
+          src: "/static/customer-service.png"
+        })),
+        createElementVNode("text", utsMapOf({ class: "contact-us-text" }), "联系我们")
+      ]),
+      createElementVNode("view", utsMapOf({ class: "content-container" }), [
+        createElementVNode("view", utsMapOf({
+          class: "qr-function",
+          style: normalizeStyle(utsMapOf({"margin":"10px 30px 20px 0px","display":"flex","flex-direction":"row","flex-wrap":"wrap","justify-content":"space-around"}))
+        }), [
+          createElementVNode("view", utsMapOf({
+            onClick: _ctx.navigateToScanPage,
+            style: normalizeStyle(utsMapOf({"display":"flex","flex-direction":"column","justify-content":"center"}))
+          }), [
+            createElementVNode("image", utsMapOf({
+              style: normalizeStyle(utsMapOf({"width":"35px","height":"35px"})),
+              src: "/static/qr-scan.png"
+            }), null, 4 /* STYLE */),
+            createElementVNode("text", utsMapOf({
+              style: normalizeStyle(utsMapOf({"font-size":"12px","padding-top":"5px","font-weight":"400"}))
+            }), "扫一扫", 4 /* STYLE */)
+          ], 12 /* STYLE, PROPS */, ["onClick"]),
+          createElementVNode("view", utsMapOf({
+            style: normalizeStyle(utsMapOf({"display":"flex","flex-direction":"column","justify-content":"center"}))
+          }), [
+            createElementVNode("image", utsMapOf({
+              style: normalizeStyle(utsMapOf({"width":"35px","height":"35px"})),
+              src: "/static/qr-scan.png"
+            }), null, 4 /* STYLE */),
+            createElementVNode("text", utsMapOf({
+              style: normalizeStyle(utsMapOf({"font-size":"12px","padding-top":"5px","font-weight":"400"}))
+            }), "收款码", 4 /* STYLE */)
+          ], 4 /* STYLE */)
+        ], 4 /* STYLE */),
+        createElementVNode("view", utsMapOf({ class: "balance-info-container" }), [
+          createElementVNode("view", utsMapOf({ class: "acc-num-sec" }), [
+            createElementVNode("view", utsMapOf({ class: "acc-display" }), [
+              createElementVNode("image", utsMapOf({
+                class: "logo-img",
+                style: normalizeStyle(utsMapOf<string, any | null>({})),
+                src: "/static/elephant.png"
+              }), null, 4 /* STYLE */),
+              createElementVNode("text", utsMapOf({
+                class: "acc-num",
+                style: normalizeStyle(utsMapOf<string, any | null>({}))
+              }), "账号 : " + toDisplayString(_ctx.userInformation.account_number), 5 /* TEXT, STYLE */),
+              createElementVNode("image", utsMapOf({
+                class: "copy-img",
+                style: normalizeStyle(utsMapOf<string, any | null>({})),
+                src: "/static/copy.png"
+              }), null, 4 /* STYLE */)
+            ]),
+            createElementVNode("view", null, [
+              createElementVNode("image", utsMapOf({
+                class: "history-img",
+                style: normalizeStyle(utsMapOf<string, any | null>({})),
+                src: "/static/notes.png"
+              }), null, 4 /* STYLE */)
+            ])
+          ]),
+          createElementVNode(Fragment, null, RenderHelpers.renderList(_ctx.userInformation.user_balance, (item, __key, __index, _cached): any => {
+            return createElementVNode("view", null, [
+              createElementVNode("view", utsMapOf({
+                style: normalizeStyle(utsMapOf({"display":"flex","flex-direction":"row","justify-content":"space-between","align-items":"flex-end","margin-top":"20px"}))
+              }), [
+                createElementVNode("view", utsMapOf({ class: "amount_sec" }), [
+                  createElementVNode("image", utsMapOf({
+                    class: "flag_img",
+                    src: item.flag
+                  }), null, 8 /* PROPS */, ["src"]),
+                  createElementVNode("text", utsMapOf({ class: "balance_text" }), "$" + toDisplayString(item.balance), 1 /* TEXT */),
+                  createVNode(_component_uni_icons, utsMapOf({
+                    style: normalizeStyle(utsMapOf({"margin-left":"10px"})),
+                    type: "eye-filled",
+                    size: "15",
+                    color: "#ffffff"
+                  }), null, 8 /* PROPS */, ["style"])
+                ]),
+                createElementVNode("view", utsMapOf({ class: "non-withdraw-sec" }), [
+                  createVNode(_component_uni_icons, utsMapOf({
+                    class: "non-withdraw-img",
+                    type: "help-filled",
+                    color: "#ffffff"
+                  })),
+                  createElementVNode("text", utsMapOf({ class: "non-withdraw-txt" }), "不可提现余额: $0.00")
+                ])
+              ], 4 /* STYLE */)
+            ])
+          }), 256 /* UNKEYED_FRAGMENT */)
+        ])
+      ])
+    ], 4 /* STYLE */)
+  ], 64 /* STABLE_FRAGMENT */)
+}
+const GenPagesHomeIndexStyles = [utsMapOf([["custom-nav", padStyleMapOf(utsMapOf([["backgroundImage", "linear-gradient(to right, #ff7f50, #ff4500)"], ["paddingTop", 40], ["paddingBottom", 10], ["paddingLeft", 20], ["paddingRight", 20], ["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"]]))], ["nav-title", padStyleMapOf(utsMapOf([["color", "#FFFFFF"], ["fontSize", 12], ["fontWeight", "bold"]]))], ["img", padStyleMapOf(utsMapOf([["width", 16], ["height", 16]]))], ["contact-us-view", padStyleMapOf(utsMapOf([["position", "fixed"], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["right", 0], ["top", "9%"], ["paddingTop", 5], ["paddingRight", 5], ["paddingBottom", 5], ["paddingLeft", 5], ["backgroundColor", "#FFFFFF"], ["borderTopLeftRadius", 15], ["borderBottomLeftRadius", 15]]))], ["contact-us-text", padStyleMapOf(utsMapOf([["color", "#1E90FF"], ["fontSize", 12], ["paddingLeft", 5]]))], ["user-level-view", padStyleMapOf(utsMapOf([["backgroundImage", "linear-gradient(to right, #ff7f50, #ff4500)"], ["paddingBottom", 25], ["paddingTop", 15], ["paddingLeft", 20], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]]))], ["user-level-text", padStyleMapOf(utsMapOf([["fontSize", 12], ["color", "#FFFFFF"], ["paddingLeft", 5]]))], ["user-level-icon", padStyleMapOf(utsMapOf([["height", 25], ["width", 25]]))], ["content-container", padStyleMapOf(utsMapOf([["borderTopLeftRadius", 5], ["borderTopRightRadius", 5], ["marginTop", -10], ["backgroundColor", "#FFFFFF"], ["paddingTop", 20], ["paddingRight", 20], ["paddingBottom", 20], ["paddingLeft", 20]]))], ["balance-info-container", padStyleMapOf(utsMapOf([["backgroundImage", "linear-gradient(to right, #a20006, #d70000)"], ["paddingTop", 20], ["paddingRight", 20], ["paddingBottom", 20], ["paddingLeft", 20], ["borderRadius", 10]]))], ["acc-num-sec", padStyleMapOf(utsMapOf([["flexDirection", "row"], ["display", "flex"], ["alignItems", "center"], ["justifyContent", "space-between"]]))], ["acc-display", padStyleMapOf(utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]]))], ["logo-img", padStyleMapOf(utsMapOf([["width", 30], ["height", 30], ["marginRight", 15]]))], ["acc-num", padStyleMapOf(utsMapOf([["color", "#FFFFFF"], ["fontSize", 13], ["fontWeight", "bold"]]))], ["copy-img", padStyleMapOf(utsMapOf([["width", 12], ["height", 11], ["marginLeft", 10]]))], ["history-img", padStyleMapOf(utsMapOf([["width", 18], ["height", 18]]))], ["amount_sec", padStyleMapOf(utsMapOf([["display", "flex"], ["flexDirection", "row"]]))], ["flag_img", padStyleMapOf(utsMapOf([["width", 35], ["height", 33]]))], ["balance_text", padStyleMapOf(utsMapOf([["color", "#FFFFFF"], ["textDecorationLine", "underline"], ["textDecorationThickness", "5px"], ["textDecorationColor", "white"], ["fontSize", 14], ["fontWeight", "bold"], ["marginLeft", 10]]))], ["non-withdraw-sec", padStyleMapOf(utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]]))], ["non-withdraw-img", padStyleMapOf(utsMapOf([["marginRight", 5]]))], ["non-withdraw-txt", padStyleMapOf(utsMapOf([["color", "#FFFFFF"], ["fontSize", 12], ["fontWeight", "700"]]))]])]
+
+import _easycom_uni_icons from '@/uni_modules/uni-icons/components/uni-icons/uni-icons.uvue'
+
+//# sourceMappingURL=index.uvue.map
